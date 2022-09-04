@@ -10,7 +10,7 @@ class RoleReset(commands.Cog):
 
     @commands.command()
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
-    async def lmao(ctx):
+    async def lmao(self, ctx):
         role_names = ('Abyss Herrscher')
         roles = tuple(get(ctx.guild.roles, name=name) for name in role_names)
         for member in ctx.guild.members:
@@ -21,7 +21,7 @@ class RoleReset(commands.Cog):
         await ctx.send('deadded')
 
     @commands.command()
-    async def test(ctx):
+    async def test(self, ctx):
         await ctx.send('woah it works')
 
 def setup(bot):
