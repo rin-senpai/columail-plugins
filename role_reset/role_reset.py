@@ -14,7 +14,7 @@ class RoleReset(commands.Cog):
     def cog_unload(self):
         self.abyss_reset.cancel()
 
-    @tasks.loop(time=24)
+    @tasks.loop(hours=24)
     async def abyss_reset(self):
         current_date = date.today().day
         if current_date == 1 or current_date == 16:
